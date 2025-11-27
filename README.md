@@ -47,14 +47,6 @@ A scalable telemedicine platform supporting 100K+ daily consultations with 99.95
 
 ---
 
-## 📌 Overview
-
-**Amrutam** is a telemedicine platform enabling patients to:
-- Discover and book doctors
-- Attend virtual consultations
-- Receive e-prescriptions
-- View audit trails
-
 Built for **scale (100K+ daily consultations)**, **security (RBAC, MFA, encryption)**, and **observability (logs, metrics, traces)**.
 
 ---
@@ -87,5 +79,6 @@ Built for **scale (100K+ daily consultations)**, **security (RBAC, MFA, encrypti
 git clone https://github.com/your-username/amrutam-backend.git
 cd amrutam-backend
 npm install
+
 
 
