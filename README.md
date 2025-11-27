@@ -10,6 +10,33 @@
   A scalable, secure, and observable telemedicine platform built with NestJS for 100K+ daily consultations.
 </p>
 
+# Amrutam Backend Architecture
+
+## Overview
+A scalable telemedicine platform supporting 100K+ daily consultations with 99.95% availability.
+
+## Tech Stack
+- **Language**: TypeScript (NestJS)
+- **DB**: PostgreSQL (RDS, partitioned tables)
+- **Cache**: Redis (ElastiCache, for sessions, rate limits, idempotency)
+- **Auth**: JWT + MFA (TOTP) + RBAC
+- **Infra**: AWS EKS, RDS, ElastiCache, S3
+- **Observability**: OpenTelemetry + CloudWatch
+
+## Data Flow
+1. Patient registers (`POST /users`) → stored in PostgreSQL
+2. Login (`POST /auth/login`) → returns JWT
+3. Doctor sets availability (`POST /doctors/:id/availability`)
+4. Patient books slot (`POST /bookings`) with `Idempotency-Key`
+5. Consultation created → prescription stored in S3
+6. All actions logged in `audit_logs` (immutable)
+
+## Key Decisions
+- **Idempotency**: All write endpoints require `Idempotency-Key`
+- **Concurrency**: DB row locks on `availability_slots`
+- **Async**: Kafka for notifications, analytics
+- **Security**: RBAC, MFA, encrypted PII
+
 <p align="center">
   <a href="https://www.npmjs.com/~nestjscore" target="_blank">
     <img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" />
@@ -67,3 +94,4 @@ Built for **scale (100K+ daily consultations)**, **security (RBAC, MFA, encrypti
 git clone https://github.com/your-username/amrutam-backend.git
 cd amrutam-backend
 npm install
+
