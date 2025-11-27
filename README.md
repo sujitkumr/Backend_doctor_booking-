@@ -37,9 +37,7 @@ A scalable telemedicine platform supporting 100K+ daily consultations with 99.95
   <a href="https://www.npmjs.com/~nestjscore" target="_blank">
     <img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="License" />
   </a>
-  <a href="https://github.com/your-username/amrutam-backend/actions" target="_blank">
-    <img src="https://github.com/your-username/amrutam-backend/workflows/CI/badge.svg" alt="CI Pipeline" />
-  </a>
+ 
   <a href="https://discord.gg/G7Qnnhy" target="_blank">
     <img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/>
   </a>
@@ -79,6 +77,7 @@ Built for **scale (100K+ daily consultations)**, **security (RBAC, MFA, encrypti
 git clone https://github.com/your-username/amrutam-backend.git
 cd amrutam-backend
 npm install
+
 
 
 
