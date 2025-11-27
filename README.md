@@ -15,13 +15,6 @@
 ## Overview
 A scalable telemedicine platform supporting 100K+ daily consultations with 99.95% availability.
 
-## Tech Stack
-- **Language**: TypeScript (NestJS)
-- **DB**: PostgreSQL (RDS, partitioned tables)
-- **Cache**: Redis (ElastiCache, for sessions, rate limits, idempotency)
-- **Auth**: JWT + MFA (TOTP) + RBAC
-- **Infra**: AWS EKS, RDS, ElastiCache, S3
-- **Observability**: OpenTelemetry + CloudWatch
 
 ## Data Flow
 1. Patient registers (`POST /users`) → stored in PostgreSQL
@@ -94,4 +87,5 @@ Built for **scale (100K+ daily consultations)**, **security (RBAC, MFA, encrypti
 git clone https://github.com/your-username/amrutam-backend.git
 cd amrutam-backend
 npm install
+
 
